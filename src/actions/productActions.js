@@ -7,7 +7,7 @@ export const setProducts = (products = []) => ({
 })
 
 export const startSetProducts =() =>{
-    return (dispatch, getState) => {
+    return (dispatch) => {
     
         return fetch('https://bodega-backend-api.herokuapp.com/products')
         .then(data => {

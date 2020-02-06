@@ -10,7 +10,7 @@ const Catalog = ({ products }) => {
     //console.log('rendering products')
   }, [])
   return (
-    <div className="white-bg">
+    <div>
       <div className="row py-3">
         <div className="col-xs-6 col-md-6">
           <h1 className="ml-2">Catalogo</h1>
@@ -20,11 +20,13 @@ const Catalog = ({ products }) => {
         </div>
       </div>
       <div className="row white grid text-center">
-        {products.map(product => (
-          <div className="col-sm-12 col-md-6 col-lg-3 my-2" key={product._id}>
-            <Card product={product} />
-          </div>
-        ))}
+        {
+            products.map(product => (
+            <div className="col-sm-12 col-md-6 col-lg-3 my-2" key={product._id}>
+              <Card product={product} />
+            </div>
+          ))
+        }
       </div>
     </div>
   );
