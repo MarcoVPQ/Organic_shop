@@ -1,4 +1,5 @@
 import { SET_PRODUCTS } from './actionTypes'
+import { loadProducts } from '../utils/asyncFunctions';
 
 
 export const setProducts = (products = []) => ({
@@ -9,11 +10,9 @@ export const setProducts = (products = []) => ({
 export const startSetProducts =() =>{
     return (dispatch) => {
     
-        return fetch('https://bodega-backend-api.herokuapp.com/products')
+        return loadProducts()
         .then(data => {
-          return data.json().then(json => {
-          dispatch(setProducts(json))
-          })
+          dispatch(setProducts(data))
         })
        
     }

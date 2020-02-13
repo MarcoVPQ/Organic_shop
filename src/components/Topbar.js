@@ -22,7 +22,7 @@ const Topbar = ({  isLogged }) => {
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setIsCollapse(!isCollapse)}>
               <span className="navbar-toggler-icon"></span>
             </button>
-            <LoggedInLinks isCollapse={isCollapse} />
+            <LoggedInLinks isCollapse={isCollapse}  />
          </React.Fragment>
         }
      </div>

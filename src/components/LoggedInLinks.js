@@ -26,6 +26,8 @@ const LoggedInLinks = ({ shoppingCartLength, logOut, isCollapse }) => {
         Productos
       </NavLink>
     </li>
+    {
+      shoppingCartLength > 0  && (
     <li className="nav-item">
       <NavLink className="nav-link" to="/shopping-cart">
         <span>
@@ -40,6 +42,8 @@ const LoggedInLinks = ({ shoppingCartLength, logOut, isCollapse }) => {
       
       </NavLink>
     </li>
+      )
+    }
     <li className="nav-item">
       <div
         className="ml-1 nav-link"

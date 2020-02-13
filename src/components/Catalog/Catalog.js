@@ -6,11 +6,14 @@ import Card from "./Card";
 import { filterProduct } from "../../utils/filter";
 
 const Catalog = ({ products }) => {
+
   useEffect(() => {
     //console.log('rendering products')
   }, [])
+
+
   return (
-    <div>
+    <React.Fragment>
       <div className="row py-3">
         <div className="col-xs-6 col-md-6">
           <h1 className="ml-2">Catalogo</h1>
@@ -28,7 +31,7 @@ const Catalog = ({ products }) => {
           ))
         }
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
