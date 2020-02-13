@@ -6,14 +6,16 @@ import "./style.css";
 
 import configureStore from "./store/configureStore";
 import AppRouter from "./router/AppRouter";
+import LoadingPage from './components/LoadingPage';
+
 
 import { startSetProducts } from "./actions/productActions";
 
-const renderApp = () => {
-  render(<App />, document.getElementById("root"));
-};
+
 
 const store = configureStore();
+
+let hasRender = false
 
 const App = () => {
   return (
@@ -23,7 +25,18 @@ const App = () => {
   );
 };
 
+const renderApp = () => {
+  render(<App />, document.getElementById("root"));
+};
+
+render(<LoadingPage />,document.getElementById('root'));
+
+
+
 
 store.dispatch(startSetProducts()).then(() => {
-  renderApp();
-});
+  if(!hasRender){
+      renderApp();
+      hasRender = true
+  }
+})

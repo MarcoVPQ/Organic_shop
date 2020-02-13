@@ -7,6 +7,8 @@ const LoginPage = ({ login }) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmedPassword, setConfirmedPassword] = useState("")
+  const [loginMode, setLoginMode] = useState(true)
 
   const onsubmitHandler = e => {
     e.preventDefault();
@@ -36,10 +38,35 @@ const LoginPage = ({ login }) => {
               value={password}
             />
           </div>
+          {
+            loginMode 
+           ? 
+           null
+           :
+           (
+            <div className="form-group">
+              <input 
+                type="password" 
+                className="form-control"
+                placeholder="Re-enter password"
+                onChange={(e) => setConfirmedPassword(e.target.value)}
+                value={confirmedPassword}
+                />
+            </div>
+            )
+    
+          }
           <div>
-            <button className="btn btn-primary btn-block">Enter</button>
+            <button 
+             className="btn btn-primary btn-block">
+             { loginMode ? 'Enter' : 'Register'}
+             </button>
           </div>
         </form>
+        <p className="text-primary login-toggle" 
+           onClick={() => setLoginMode(!loginMode)}>
+           { loginMode ? 'Create Account' : 'Back to login'}
+        </p>
       </div>
     </div>
   );

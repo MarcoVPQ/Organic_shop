@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import { Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 import Modal from "react-modal";
 
@@ -32,6 +33,10 @@ const ShoppingCart = ({ shoppingCart, total, history, emptyCart }) => {
     emptyCart();
     history.push("/products");
   };
+
+  if(shoppingCart.length === 0){
+    return <Redirect to="/products" />
+  }
 
   return (
     <React.Fragment>
