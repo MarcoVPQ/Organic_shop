@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { history } from "../../router/AppRouter";
 
-import { addToCart, removeFromCart } from "../../actions/shoppingCartActions";
+import { addToCart } from "../../actions/shoppingCartActions";
 
 
 const Card = props => {
@@ -50,19 +50,18 @@ const Card = props => {
             }} className="btn btn-primary">
             Ver mas
         </button>
-        {!props.shoppingCart.find(item => item._id === _id) ? (
+        {!props.shoppingCart.find(item => item._id === _id) 
+        ? (
           <button
             className="btn btn-success ml-1"
             onClick={() => addProduct(props.product)}
             >
             Agregar
-          </button>
-        ) : (
+          </button>) 
+          : (
           <button
-            className="btn btn-danger ml-1"
-            onClick={() => props.removeFromCart(_id)}
-          >
-            Remover
+            className="btn btn-success ml-1">
+            Añadido <i className="fa fa-check"></i>
           </button>
         )}
       </div>
@@ -71,8 +70,7 @@ const Card = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: product => dispatch(addToCart(product)),
-  removeFromCart: id => dispatch(removeFromCart(id)),
+  addToCart: product => dispatch(addToCart(product))
 });
 
 const mapStateToProps = ({ shoppingCart }) => ({

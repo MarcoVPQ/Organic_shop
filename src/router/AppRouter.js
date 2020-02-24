@@ -11,6 +11,7 @@ import Detail from '../components/Details/Details'
 import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
 import NotFound from './../components/NotFound';
+import Profile from './../components/Profile/Profile';
 
 export const history = createHistory();
 
@@ -26,6 +27,7 @@ const AppRouter = () => (
             <PrivateRoute path="/products" component={Catalog} />
             <PrivateRoute path="/product/:id" component={Detail} />
             <PrivateRoute path="/shopping-cart" component={ShoppingCart} />
+            <PrivateRoute path="/profile" component={Profile} />
             <Route component={NotFound} />
           </Switch>
         </div>

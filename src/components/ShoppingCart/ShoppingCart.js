@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import { Redirect } from 'react-router-dom'
 import { connect } from "react-redux";
 import Modal from "react-modal";
@@ -42,9 +42,8 @@ const ShoppingCart = ({ shoppingCart, total, history, emptyCart }) => {
     <React.Fragment>
       <h1>Carrito</h1>
       <div className="row" style={{ minHeight: "20rem" }}>
-        {shoppingCart.length > 0 ? (
-          <Fragment>
             <ShoppingCartList />
+
             <div className="col-md-6 py-4">
               <h3>Total : ${total}</h3>
               <div className="mt-5">
@@ -77,12 +76,6 @@ const ShoppingCart = ({ shoppingCart, total, history, emptyCart }) => {
                 </div>
               </div>
             </Modal>
-          </Fragment>
-        ) : (
-          <div className="col-md-12 py-4 text-center">
-            <h3>Tu carrito esta vacio</h3>
-          </div>
-        )}
       </div>
       <SectionFooter />
     </React.Fragment>

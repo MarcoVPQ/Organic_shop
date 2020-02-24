@@ -45,15 +45,27 @@ const LoggedInLinks = ({ shoppingCartLength, logOut, isCollapse }) => {
       )
     }
     <li className="nav-item">
+      <NavLink
+      to="/profile"
+        className="ml-1 nav-link"
+        style={{ cursor: "pointer" }}
+      >
+        <span>
+          <i className="fa fa-user-circle" aria-hidden="true" />
+        </span>{" "}
+        Account
+      </NavLink>
+    </li>
+    <li className="nav-item">
       <div
         className="ml-1 nav-link"
         style={{ cursor: "pointer" }}
         onClick={onLogout}
       >
         <span>
-          <i className="fa fa-user-circle" aria-hidden="true" />
+          <i className="fa fa-sign-out" />
         </span>{" "}
-        Account
+        Logout
       </div>
     </li>
   </ul>
