@@ -4,14 +4,9 @@ import { createBrowserHistory as createHistory } from 'history'
 
 import Topbar from '../components/Topbar'
 import LoginPage from '../components/LoginPage'
-import Catalog from '../components/Catalog/Catalog'
-import ShoppingCart from '../components/ShoppingCart/ShoppingCart'
-import Detail from '../components/Details/Details'
+import InnerRoutes from './InnerRoutes';
 
-import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute'
-import NotFound from './../components/NotFound';
-import Profile from './../components/Profile/Profile';
 
 export const history = createHistory();
 
@@ -21,16 +16,10 @@ const AppRouter = () => (
 
       <div className="store">
         <Topbar />
-        <div className="container p-4 mt-2">
-          <Switch>
-            <PublicRoute path="/" component={LoginPage} exact={true} />
-            <PrivateRoute path="/products" component={Catalog} />
-            <PrivateRoute path="/product/:id" component={Detail} />
-            <PrivateRoute path="/shopping-cart" component={ShoppingCart} />
-            <PrivateRoute path="/profile" component={Profile} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
+        <Switch>
+          <PublicRoute path="/" component={LoginPage} exact={true} />
+          <Route component={InnerRoutes} />
+        </Switch>
     </div>
 
   </Router>

@@ -16,9 +16,10 @@ const LoginPage = ({ login }) => {
   };
 
   return (
+    <div className="container-fluid">
     <div className="row mt-2">
-      <div className="col-md-6 offset-md-3 text-center  p-5 ms-1">
-        <h1>Ingresar</h1>
+      <div className="col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center  p-5 ms-1">
+        <h1 className="text-white">Ingresar</h1>
         <form className="p-2 mt-3" onSubmit={e => onsubmitHandler(e)}>
           <div className="form-group">
             <input 
@@ -63,12 +64,13 @@ const LoginPage = ({ login }) => {
              </button>
           </div>
         </form>
-        <p className="text-primary login-toggle" 
+        <p className="text-white login-toggle" 
            onClick={() => setLoginMode(!loginMode)}>
            { loginMode ? 'Create Account' : 'Back to login'}
         </p>
       </div>
     </div>
+  </div>
   );
 };
 
