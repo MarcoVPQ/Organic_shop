@@ -25,7 +25,7 @@ const LoginPage = ({ login }) => {
             <input 
               className="form-control" 
               type="email" 
-              placeholder="Email"
+              placeholder="Correo electronico"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
                />
@@ -34,7 +34,7 @@ const LoginPage = ({ login }) => {
             <input
               className="form-control"
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
@@ -49,7 +49,7 @@ const LoginPage = ({ login }) => {
               <input 
                 type="password" 
                 className="form-control"
-                placeholder="Re-enter password"
+                placeholder="Confirmar contraseña"
                 onChange={(e) => setConfirmedPassword(e.target.value)}
                 value={confirmedPassword}
                 />
@@ -60,13 +60,13 @@ const LoginPage = ({ login }) => {
           <div>
             <button 
              className="btn btn-primary btn-block">
-             { loginMode ? 'Enter' : 'Register'}
+             { loginMode ? 'Entrar' : 'Registrate'}
              </button>
           </div>
         </form>
         <p className="text-white login-toggle" 
            onClick={() => setLoginMode(!loginMode)}>
-           { loginMode ? 'Create Account' : 'Back to login'}
+           { loginMode ? 'Crear Perfil' : 'Cancelar'}
         </p>
       </div>
     </div>

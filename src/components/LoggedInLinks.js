@@ -53,7 +53,7 @@ const LoggedInLinks = ({ shoppingCartLength, logOut, isCollapse }) => {
         <span>
           <i className="fa fa-user-circle" aria-hidden="true" />
         </span>{" "}
-        Account
+        Perfil
       </NavLink>
     </li>
     <li className="nav-item">
@@ -65,7 +65,7 @@ const LoggedInLinks = ({ shoppingCartLength, logOut, isCollapse }) => {
         <span>
           <i className="fa fa-sign-out" />
         </span>{" "}
-        Logout
+        Salir
       </div>
     </li>
   </ul>
