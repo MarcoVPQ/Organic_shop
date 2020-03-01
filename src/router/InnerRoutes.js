@@ -11,8 +11,7 @@ import Profile from './../components/Profile/Profile';
 
 
 const InnerRoutes = () => (
-    <Switch>
-          <div className="container p-4 mt-2">
+        <div className="container p-4 mt-2">
           <Switch>
             <PrivateRoute path="/products" component={Catalog} />
             <PrivateRoute path="/product/:id" component={Detail} />
@@ -21,7 +20,6 @@ const InnerRoutes = () => (
             <Route component={NotFound} />
           </Switch>
         </div>
-    </Switch>
 )
 
 export default InnerRoutes
