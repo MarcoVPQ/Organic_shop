@@ -23,7 +23,7 @@ const Profile = () => {
                              activeClassName="active"
                              exact
                              >
-                             Informacion de tu cuenta
+                             Tu cuenta
                             </NavLink>
                         </li>
                          <li className="nav-item">
@@ -32,7 +32,7 @@ const Profile = () => {
                               className="nav-link"
                               activeClassName="active"
                               >
-                              Tus ordenes
+                              Mis ordenes
                              </NavLink>
                         </li>
                     </ul>
